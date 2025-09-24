@@ -1,0 +1,49 @@
+ {% extends 'films/layoute.html' %}
+
+ {% block title %}
+   <title>Страница для добавления отзыва на фильм</title>
+ {% endblock %}
+
+ {% block content %}
+<div>
+   <body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="news-form-container p-0">
+                    <div class="form-header p-4">
+                        <h2 class="mb-0"><i class="bi bi-newspaper me-2"></i>Добавление нового отзыва</h2>
+                    </div>
+
+                    <form method="post" class="p-4">
+                        {% csrf_token %}
+
+                        <div class="mb-3">
+                            {{form.title}}
+                        </div>
+
+                        <div class="mb-3">
+                            {{form.short_description}}
+                        </div>
+
+                        <div class="mb-3">
+                            {{form.text}}
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="bi bi-check-circle me-2"></i>Опубликовать отзыв
+                            </button>
+                        </div>
+                    </form>
+                    <p>{{erro}}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</div>
+ {% endblock %}
