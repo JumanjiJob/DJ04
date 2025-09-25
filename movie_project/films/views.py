@@ -15,7 +15,7 @@ def create_review(request):
         form = News_postForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('/review')
         else:
             error = "Данные были зполнены некорректно"
     form = News_postForm()

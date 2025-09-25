@@ -5,23 +5,5 @@
  {% endblock %}
 
  {% block content %}
-    <h1>Новостная страница</h1>
-    {% if films  %}
-         {% for film in films %}
-
-            <div class="card">
-                <div class="card" style="width: 20rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">{{film.title}}</h5>
-                    <p class="card-text">{{film.short_description}}<br>{{film.text}}</p>
-                    <a href="#" class="btn btn-primary">Подробнее</a>
-                  </div>
-                </div>
-            </div>
-
-         {% endfor%}
-     {% else %}
-        <h4>Новостей еще нет</h4>
-     {% endif %}
 
  {% endblock %}

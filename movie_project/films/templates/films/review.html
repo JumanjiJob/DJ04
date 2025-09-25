@@ -1,17 +1,20 @@
- {% block title %}
+{% extends 'films/layoute.html' %}
+{% block title %}
    <title>Страница с отзывами</title>
  {% endblock %}
 
  {% block content %}
     <h1>Страница с отзывами</h1>
-    {% if news  %}
-         {% for new in news %}
+    {% if films  %}
+         {% for film in films %}
 
             <div class="card">
                 <div class="card" style="width: 20rem;">
                   <div class="card-body">
-                    <h5 class="card-title">{{new.title}}</h5>
-                    <p class="card-text">{{new.short_description}}<br>{{new.text}}<br>{{new.author}}<br>{{new.pub_date}}</p>
+                    <h4 class="card-title">{{film.title}}</h4>
+                    <p class="card-text">
+                      <h5>{{film.short_description}}</h5>
+                        <br>{{film.text}}</p>
                     <a href="#" class="btn btn-primary">Подробнее</a>
                   </div>
                 </div>
@@ -19,7 +22,7 @@
 
          {% endfor%}
      {% else %}
-        <h4>Новостей еще нет</h4>
+        <h4>Отзывов еще нет</h4>
      {% endif %}
 
  {% endblock %}
